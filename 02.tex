@@ -14,28 +14,23 @@
 \end{figure}
 
 \section{解析条件}
-本研究で用いる幾何音響解析ソフトには3つの解析タイプ(Audio area mapping, Early part detailed, Full detailed calculation)があり、それぞれ音線法、鏡像法、Randomized Tail-corrected Cone-tracing(RTC)の解析手法が用いられている。
+本研究で用いる幾何音響解析ソフトには3つの解析タイプ(Audio area mapping, Early part detailed, Full detailed calculation)があり、それぞれ音線法、鏡像法、Randomized Tail-corrected Cone-tracing(RTC)の手法が用いられている。
 RTCとは音線の先に円の有限領域をもたせるCone-tracingと標準的な音線法及び鏡像法をハイブリッドした解析手法である。
-\\　本研究では、これらのうち後期音までのインパルス応答を算出するFull detailed calculationと、方向情報を含んだ初期音のインパルス応答を算出するEarly part detailedの2つの解析タイプを使用した。それぞれの解析タイプで出力されるインパルス応答を\textgt{図}\ref{fig:Full_IR}と\textgt{図}\ref{fig:Early_IR}に、解析条件を\textgt{表}\ref{Full_set}及び\textgt{表}\ref{Early_set}に示す。
-\\　また、音速と空気吸収は\textgt{式}\ref{eq:speed_of_sound}と\textgt{式}\ref{eq:air_absorption}により設定される。
+\\　本研究では、これらのうち後期音までのインパルス応答を算出するFull detailed calculationと、方向情報を含む初期音のインパルス応答を算出するEarly part detailedの2つの解析タイプを使用した。それぞれの解析タイプで出力されるインパルス応答を\textgt{図}\ref{fig:Full_IR}と\textgt{図}\ref{fig:Early_IR}に、解析条件を\textgt{表}\ref{Full_set}及び\textgt{表}\ref{Early_set}に示す。
+\\　また、音速と空気吸収は\textgt{式}\ref{eq:speed_of_sound}と\textgt{式}\ref{eq:air_absorption}により設定される。解析では一般的な室内を想定し、気温\(20^\circ\)、相対湿度50\%、空気の比重を1.2kg/m$^3$に設定した。
 
 \begin{equation}
  \label{eq:speed_of_sound}
 c = 331.4\sqrt{1+\frac{\theta}{273}}
 \end{equation}
-
 \begin{equation}
  \label{eq:air_absorption}
 m_b = \mathrm{from \; ISO \; 9613.1^{\text{\cite{organizacion1993iso}}} \; based \; on \; \theta, \; f_b, \; and \; \phi}
 \end{equation}
-
-
-
-気温\(20^\circ\)、相対湿度50\%、空気の比重を1.2kg/m$^3$に設定した。
-この条件により、音速と空気吸収が定まる。
-\subsubsection{Early part detailed ISM}
-
-\subsubsection{Full detailed calculation}
+\hspace{3cm}$\theta$ : air temperature, {\kern-.2em\r{}\kern-.3em C}\\
+\hspace{3cm}$m_b$ : air dissipation coefficient, m$^{-1}$\\
+\hspace{3cm}$f_b$ : octave-band center frequency, Hz\\
+\hspace{3cm}$\phi$ : relative humidity, $\%$
 
 \section{解析モデル}
 解析モデルは収容人員1,500人程度のコンサートホールを想定し、平面形状が矩形のモデル(TypeA)と扇形のモデル(TypeB)の2種類の空間モデルを対象とした。両モデルとも舞台高さを1m、奥行きを10mに統一した。
