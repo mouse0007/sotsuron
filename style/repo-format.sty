@@ -1,0 +1,287 @@
+%%ylab_thesisテンプレートをベースに改変
+
+% 変数定義
+\makeatletter
+
+% 変数読み込み
+\def\jclass#1{\gdef\@jclass{#1}}
+\def\jtitle#1{\gdef\@jtitle{#1}}
+\def\juniv#1{\gdef\@juniv{#1}}
+\def\jfaculty#1{\gdef\@jfaculty{#1}}
+\def\jauthor#1{\gdef\@jauthor{#1}}
+\def\jadvisor#1#2{\gdef\@jadvisor{#1}\gdef\@jposition{#2}}
+\def\jhyear#1{\gdef\@jhyear{#1}}
+\def\jsyear#1{\gdef\@jsyear{#1}}
+\def\jkeyword#1{\gdef\@jkeyword{#1}}
+\def\eclass#1{\gdef\@eclass{#1}}
+\def\etitle#1{\gdef\@etitle{#1}}
+\def\euniv#1{\gdef\@euniv{#1}}
+\def\efaculty#1{\gdef\@efaculty{#1}}
+\def\eauthor#1{\gdef\@eauthor{#1}}
+\def\eadvisor#1#2{\gdef\@eposition{#1}\gdef\@eadvisor{#2}}
+\def\eyear#1{\gdef\@eyear{#1}}
+\def\ekeyword#1{\gdef\@ekeyword{#1}}
+
+% 余白設定（左右対称）
+\setlength{\textwidth}{155truemm}	%「用紙サイズ-右余白-左余白」を指定
+\setlength{\oddsidemargin}{5truemm} % 左余白（奇数ページ）
+\setlength{\evensidemargin}{5truemm}% 左余白（偶数ページ）
+\setlength{\topmargin}{-9truemm}	% 上の余白
+\setlength{\textheight}{238truemm} 	%「用紙サイズ-上余白-下余白」
+\setlength{\footskip}{12truemm}		% ノンブル挿入位置（余白位置から下へどれだけか）
+
+% 余白設定（左綴じ用）
+\newcommand{\bindermode}{%
+	\setlength{\textwidth}{155truemm}
+	\setlength{\oddsidemargin}{5truemm}
+	\setlength{\evensidemargin}{5truemm}
+	\setlength{\topmargin}{-9truemm}
+	\setlength{\textheight}{238truemm}
+	\setlength{\footskip}{12truemm}
+}
+
+% 余白設定（旧）
+%\addtolength{\oddsidemargin}{-1truein}	% 原点を用紙左上に移動（左）
+%\addtolength{\evensidemargin}{-1truein}	% 原点を用紙左上に移動（左）
+%\addtolength{\topmargin}{-1truein}		% 原点を用紙左上に移動（上）
+
+
+% 表紙用行間広め定義
+\newenvironment{lineskiptitle}{%
+	\baselineskip = 1.5cm
+}
+
+% 表紙の定義（外部PDF）
+\def\PDFmaketitle{\par
+	\begingroup
+	\@PDFmaketitle
+	\endgroup
+}
+\def\@PDFmaketitle{%
+	\thispagestyle{empty}
+	 \newgeometry{left=-3.384mm,bottom=-297mm,top=0mm}
+	  \includegraphics[keepaspectratio,scale=1.00]{index.pdf}
+	 \restoregeometry
+	\newpage
+	\pagenumbering{roman}
+}
+
+% 表紙の定義（日本語）
+\def\jmaketitle{\par
+	\begingroup
+	\@jmaketitle
+	\endgroup
+}
+\def\@jmaketitle{%
+	\thispagestyle{empty}
+	\begin{center}
+		{\Large 平成\@jhyear 年度}
+		\vspace{0.5cm}\par
+		{\Large \@jclass}
+		\vfill
+		\begin{lineskiptitle}
+		{\huge \@jtitle} %\bf
+		\end{lineskiptitle}
+		\vfill
+		{\Large \@juniv\ \@jfaculty}
+		\vspace{0.5cm}\par
+		{\LARGE \@jauthor}
+		\vspace{2cm}\par
+		{\Large 指導教員：\ \@jadvisor\ \@jposition}
+	\end{center}
+	\newpage
+	\pagenumbering{roman}
+}
+
+% 表紙の定義（英語）
+\def\emaketitle{\par
+	\begingroup
+	\@emaketitle
+	\endgroup
+}
+\def\@emaketitle{%
+	\thispagestyle{empty}
+	\begin{center}
+		{\Large Year\ \@eyear}
+		\vspace{0.5cm}\par
+		{\Large \@eclass}
+		\vfill
+		\begin{lineskiptitle}
+		{\Huge\sf \@etitle}
+		\end{lineskiptitle}
+		\vfill
+		{\Large \@euniv\ \@efaculty}
+		\vspace{0.5cm}\par
+		{\LARGE \@eauthor}
+		\vspace{2cm}\par
+		{\Large Advisor:\ \@eposition\ \@eadvisor}
+	\end{center}
+	\newpage
+	\pagenumbering{roman}
+}
+
+% アブストラクト用行間広め設定
+\newenvironment{lineskipabst}{%
+	\baselineskip = 1cm
+}
+
+% アブストラクトの定義（日本語）
+\newenvironment{jabstract}{%
+	\begin{center}
+		{\Large\bf \@jclass 概要 \@jsyear 年度（平成\@jhyear 年度）}
+		\vspace{1cm}\par
+		\begin{lineskipabst}
+		{\LARGE\bf \@jtitle}\vspace{2cm}
+		\end{lineskipabst}
+	\end{center}
+	\parindent=1zw
+	\ifjapanese \else \renewcommand{\baselinestretch}{1.15}\selectfont \fi
+}{
+	\vfill
+	{\bf キーワード：} \@jkeyword
+	\newpage
+	\ifjapanese \parindent=1zw \else \parindent=1.6zw \fi
+	\renewcommand{\baselinestretch}{1.0}\selectfont
+}
+
+% アブストラクトの定義（英語）
+\newenvironment{eabstract}{%
+	\begin{center}
+		{\Large\bf \@eclass\ Overview Year \@eyear}
+		\vspace{1cm}\par
+		\begin{lineskipabst}
+		{\LARGE\sf \@etitle}\vspace{2cm}
+		\end{lineskipabst}
+	\end{center}
+	\parindent=1.6zw
+	\ifjapanese \renewcommand{\baselinestretch}{0.89}\selectfont \fi
+}{
+	\vfill
+	{\sf Keywords:} \@ekeyword
+	\newpage
+	\ifjapanese \parindent=1zw \else \parindent=1.6zw \fi
+	\renewcommand{\baselinestretch}{1.0}\selectfont
+}
+
+% 目次環境再定義
+\renewcommand{\tableofcontents}{%
+	\section*{\contentsname}
+	\@starttoc{toc}
+	\newpage
+}
+%%					  \@dottedtocline{レベル} {字下げ} {節番号-題間隔} {題字} {ページ}
+\def\l@subsection#1#2{\@dottedtocline{2}      {4em}    {3em}   {#1}   {#2}}
+
+% 図目次環境再定義
+\renewcommand{\listoffigures}{%
+	\section*{\listfigurename}
+	\@starttoc{lof}
+	\newpage
+}
+
+% 表目次環境再定義
+\renewcommand{\listoftables}{%
+	\section*{\listtablename}
+	\@starttoc{lot}
+	\newpage
+}
+
+% 謝辞環境の作成
+\newenvironment{acknowledgment}{%
+	\addcontentsline{toc}{chapter}{\acknowledgmentname}
+	\chapter*{\acknowledgmentname}
+}{}
+
+% 参考文献環境の作成
+\newenvironment{bib}[1][100]{%
+	\addcontentsline{toc}{chapter}{\bibname}
+	\begin{thebibliography}{#1}
+}{
+	\end{thebibliography}
+}
+
+%梗概添付環境の作成
+\def\kougaiatttach{\par
+	\begingroup
+	\@kougaiatttach
+	\endgroup
+}
+\def\@kougaiatttach{%
+	\newpage
+	\thispagestyle{empty}
+	 \newgeometry{left=-3.384mm,bottom=-297mm,top=0mm}
+	  \includegraphics[bb=0 0 595 842,keepaspectratio,scale=1.00]{kougai_1.pdf}
+	 \restoregeometry
+	 \newpage
+	 \newgeometry{left=-3.384mm,bottom=-297mm,top=0mm}
+	  \includegraphics[bb=0 0 595 842,keepaspectratio,scale=1.00]{kougai_2.pdf}
+	 \restoregeometry
+	\newpage
+	\pagenumbering{roman}
+}
+
+% ヘッダーフッターの設定
+\pagestyle{fancy} %余白の後に各
+ \lhead[]{}%[偶数]{奇数}ヘッダ左側
+ \chead[]{}%[偶数]{奇数}ヘッダ中央
+ \rhead[]{}%[偶数]{奇数}ヘッダ右側
+ \lfoot[]{}%[偶数]{奇数}フッタ左側
+ \cfoot[\thepage]{\thepage}%[偶数]{奇数}フッタ中央
+ \rfoot[]{}%[偶数]{奇数}フッタ右側
+ \renewcommand{\headrulewidth}{0.0pt} %ヘッダー下の線の幅
+
+% subsection 環境の設定変更
+%\renewcommand{\thesubsection}{\Alph{subsection}} %ABC表記に
+
+% subsubsection 環境の設定変更
+%\setcounter{secnumdepth}{3}
+%\renewcommand\thesubsubsection{\thesubsection-\Alph{subsubsection}}
+
+% 箇条書きの行間設定
+\renewenvironment{itemize}{%
+   \begin{list}{\parbox{1zw}{$\bullet$}}{%
+      \setlength{\itemsep}{0em}
+      \setlength{\parsep}{0em}
+   }}{%
+   \end{list}
+}
+
+%記号の定義
+\newcommand{\diff}{\mathrm{d}}  %微分記号
+\newcommand{\divergence}{\mathrm{div}\,}  %ダイバージェンス
+\newcommand{\grad}{\mathrm{grad}\,}  %グラディエント
+\newcommand{\rot}{\mathrm{rot}\,}  %ローテーション
+
+% 行間
+\renewcommand{\baselinestretch}{1.2}
+\renewcommand{\arraystretch}{0.8} %表
+
+% 図・表のキャプションの設定
+\captionsetup[figure]{format=plain, labelformat=simple, labelsep=space}
+\captionsetup[table]{format=plain, labelformat=simple, labelsep=space}
+
+\renewcommand{\figurename}{\textgt{図}}
+\renewcommand{\tablename}{\textgt{表}}
+
+%表組みに太い線を設定
+\newlength\savedwidth
+\newcommand\Hline{%
+    \noalign{\xdef\origarrayrulewidth{\the\arrayrulewidth}%
+    \global\arrayrulewidth 3\arrayrulewidth}%
+    \hline%
+    \noalign{\global\arrayrulewidth\origarrayrulewidth}%
+}
+%表組みに太い線を設定（縦用）
+\newcommand{\Vline}{\vrule width 1.3pt}
+%表組みに太い線を設定（古いやり方2）
+%\newcommand{\Hline}{\noalign{\hrule height 2pt}}   
+%表組みに太い線を設定（古いやり方1）
+%\def\Hline{%
+%\noalign{\ifnum0=`}\fi\hrule \@height 2pt \futurelet
+%\reserved@a\@xhline}
+
+%脚注の書式設定
+\renewcommand\thefootnote{\arabic{footnote})} %片カッコ
+
+
+\makeatother
