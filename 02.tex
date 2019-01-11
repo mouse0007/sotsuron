@@ -15,10 +15,11 @@
 \end{figure}
 
 \section{解析条件}
-本研究で用いる幾何音響解析ソフトには3つの解析タイプ(Audio area mapping, Early part detailed, Full detailed calculation)があり、それぞれ音線法、鏡像法、Randomized Tail-corrected Cone-tracing(RTC)により計算される(\textgt{表}\ref{3つの解析タイプ})。
+本研究で用いる幾何音響解析ソフトには3つの解析タイプ(Audio area mapping, Early part detailed, Full detailed calculation)があり、それぞれ音線法、鏡像法、Randomized Tail-corrected Cone-tracing method (RTC)により計算される(\textgt{表}\ref{3つの解析タイプ})。
 RTCとは音線の先に円の有限領域をもたせるCone-tracingと標準的な音線法及び鏡像法をハイブリッドした解析手法である。
 \\　本研究ではこれらのうち、後期反射音までのインパルス応答を算出するFull detailed calculationから室内音響物理指標を、初期反射音までのインパルス応答(方向情報含む)を算出するEarly part detailedから方向別物理量を各々求めた。それぞれの解析タイプで出力されるインパルス応答を\textgt{図}\ref{fig:Full_IR}と\textgt{図}\ref{fig:Early_IR}に、解析条件を\textgt{表}\ref{Full_set}及び\textgt{表}\ref{Early_set}に示す。
 
+% 3つの解析手法について
 \begin{table}[htbp]
 \centering
 \caption{解析手法と出力データ}
@@ -28,20 +29,48 @@ RTCとは音線の先に円の有限領域をもたせるCone-tracingと標準�
 \Hline
 Prediction methods & Name & \multicolumn{3}{c}{Output data} \\ \cline{3-5} 
  &  & \multicolumn{2}{c}{Impulse response} & Room acoustic parameters \\ \cline{3-4}
- &  & \multicolumn{1}{c|}{Time domain} & Spatial information &  \\ \Hline
-Ray-tracing method & Audio area mapping & - & - & Inclusion \\
-Image source method & Early part detailed & Early part only & Inclusion & - \\
-RTC & Full detailed calculation & Full & Limited inclusion & Inclusion \\ \Hline
+ &  & \multicolumn{1}{c|}{Time domain} & Spatial information &  \\ \hline
+Ray-tracing method & Audio area mapping & $\times$ & $\times$ & $\bigcirc$ \\
+Image source method & Early part detailed & Early part only & $\bigcirc$ & $\times$ \\
+RTC method & Full detailed calculation & Full & $\bigtriangleup^{*}$ & $\bigcirc$ \\ \Hline
+\multicolumn{5}{l}{$^{*}$ : have limited spatial information}
 \end{tabular}%
 }
 \end{table}
 
+%EarlyとFullの解析条件
+\begin{table}[htbp]
+  \begin{minipage}[t]{.45\textwidth}
+    \begin{center}
+    \caption{Full detailed calculationの解析条件}
+    \label{Full_set}
+      \begin{tabular}{lc}%ひだり
+      \Hline
+      \multicolumn{1}{c}{Setting items} & Input value \\ \hline
+      Number of rays & 99,9999 \\
+      Truncation time [ms] & 3,500 \\ \Hline
+      \end{tabular}
+    \end{center}
+  \end{minipage}
+  %
+  \hfill
+  %
+  \begin{minipage}[t]{.45\textwidth}
+    \begin{center}
+    \caption{Early part detailedの解析条件}
+    \label{Early_set}
+      \begin{tabular}{lc}%みぎ
+      \Hline
+      \multicolumn{1}{c}{Setting items} & \multicolumn{1}{c}{Input value} \\ \hline
+      Specular reflection order (0-9) & 9 \\
+      Diffuse reflection order (0-1) & 1 \\
+      Truncation time [ms] & 300 \\ \Hline
+      \end{tabular}
+    \end{center}
+  \end{minipage}
+\end{table}
 
-
-
-
-
-\\　また、音速と空気吸収は\textgt{式}\ref{eq:speed_of_sound}と\textgt{式}\ref{eq:air_absorption}により定められる。本研究では一般的な室内を想定し、$\theta$=20[{\kern-.2em\r{}\kern-.3em C}]、$\phi=50[\%]$とした。すなわち、$c=343$[m/s]、 $m_b=0.63\times10^{-3}$[m$^{-1}$](500Hz)で解析を行った。
+また、音速と空気吸収は\textgt{式}\ref{eq:speed_of_sound}と\textgt{式}\ref{eq:air_absorption}により定められる。本研究では一般的な室内を想定し、$\theta$=20[{\kern-.2em\r{}\kern-.3em C}]、$\phi=50[\%]$とした。すなわち、$c=343$[m/s]、 $m_b=0.63\times10^{-3}$[m$^{-1}$](500Hz)の条件下で解析を行った。
 
 \begin{equation}
  \label{eq:speed_of_sound}
@@ -51,10 +80,10 @@ c = 331.4\sqrt{1+\frac{\theta}{273}}
  \label{eq:air_absorption}
 m_b = \mathrm{from \; ISO \; 9613.1^{\text{\cite{organizacion1993iso}}} \; based \; on \; \theta, \; f_b, \; and \; \phi}
 \end{equation}
-\hspace{3cm}$\theta$ : air temperature, {\kern-.2em\r{}\kern-.3em C}\\
-\hspace{3cm}$m_b$ : air dissipation coefficient, m$^{-1}$\\
-\hspace{3cm}$f_b$ : octave-band center frequency, Hz\\
-\hspace{3cm}$\phi$ : relative humidity, $\%$
+\hspace{2cm}$\theta$ : air temperature, {\kern-.2em\r{}\kern-.3em C}\\
+\hspace{2cm}$m_b$ : air dissipation coefficient, m$^{-1}$\\
+\hspace{2cm}$f_b$ : octave-band center frequency, Hz\\
+\hspace{2cm}$\phi$ : relative humidity, $\%$
 
 \section{解析モデル}
 解析モデルは収容人員1,500人程度のコンサートホールを想定し、平面形状が矩形のモデル(TypeA)と扇形のモデル(TypeB)の2種類の空間モデルを対象とした。両モデルとも舞台高さを1m、奥行きを10mに統一した。
@@ -161,10 +190,10 @@ Wall \_ stage            & Acoustic reflector                        & 0.10 & 0.
  s_{\scalebox{0.5}{effective}} = s_{\scalebox{0.5}{surface}} + \frac{s_{\scalebox{0.5}{edge}}
  S_{\scalebox{0.5}{edge}}}{S_{\scalebox{0.5}{surface}}}\\
 \end{equation}
-\hspace{3cm}$s_{\scalebox{0.5}{edge}} = 0.5$\\
-\hspace{3cm}$s_{\scalebox{0.5}{surface}}$ : The normal surface scattering coefficient\\
-\hspace{3cm}$S_{\scalebox{0.5}{edge}}$ : The area of an edge quarter of a wavelength wide\\
-\hspace{3cm}$S_{\scalebox{0.5}{surface}}$ : The complete plane or sub-plane area\\
+\hspace{2cm}$s_{\scalebox{0.5}{edge}} = 0.5$\\
+\hspace{2cm}$s_{\scalebox{0.5}{surface}}$ : The normal surface scattering coefficient\\
+\hspace{2cm}$S_{\scalebox{0.5}{edge}}$ : The area of an edge quarter of a wavelength wide\\
+\hspace{2cm}$S_{\scalebox{0.5}{surface}}$ : The complete plane or sub-plane area\\
 
 
 \begin{figure}[htbp]
