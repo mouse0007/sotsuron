@@ -17,8 +17,8 @@
 \section{解析条件}
 本研究で用いる幾何音響解析ソフトには3つの解析タイプ(Audio area mapping, Early part detailed, Full detailed calculation)があり、それぞれ音線法、鏡像法、Randomized Tail-corrected Cone-tracing method (RTC)により計算される(\textgt{表}\ref{3つの解析タイプ})。
 RTCとは音線の先に円の有限領域をもたせるCone-tracingと標準的な音線法及び鏡像法をハイブリッドした解析手法である。
-\\　本研究ではこれらのうち、後期反射音までのインパルス応答を算出するFull detailed calculationから室内音響物理指標を、初期反射音までのインパルス応答(方向情報含む)を算出するEarly part detailedから方向別物理量を各々求めた。それぞれの解析タイプで出力されるインパルス応答を\textgt{図}\ref{fig:Full_IR}と\textgt{図}\ref{fig:Early_IR}に、解析条件を\textgt{表}\ref{Full_set}及び\textgt{表}\ref{Early_set}に示す。
-
+\\　本研究ではこれらのうち、後期反射音までのインパルス応答を算出するFull detailed calculationから室内音響物理指標を、初期反射音までのインパルス応答(方向情報含む)[\textgt{図}\ref{fig:Early_IR}]を算出するEarly part detailedから方向別物理量を各々求めた。それぞれ解析条件を\textgt{表}\ref{Full_set}及び\textgt{表}\ref{Early_set}に示す。
+\\
 % 3つの解析手法について
 \begin{table}[htbp]
 \centering
@@ -38,9 +38,16 @@ RTC method & Full detailed calculation & Full & $\bigtriangleup^{*}$ & $\bigcirc
 }
 \end{table}
 
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[keepaspectratio,scale=1]{02_att/Early_IR.pdf}
+    \caption{\hspace{1mm}Early part detailedによるインパルス応答}
+    \label{fig:Early_IR}
+\end{figure}
+
 %EarlyとFullの解析条件
 \begin{table}[htbp]
-  \begin{minipage}[t]{.45\textwidth}
+\begin{minipage}[t]{.45\textwidth}
     \begin{center}
     \caption{Full detailed calculationの解析条件}
     \label{Full_set}
@@ -70,6 +77,7 @@ RTC method & Full detailed calculation & Full & $\bigtriangleup^{*}$ & $\bigcirc
   \end{minipage}
 \end{table}
 
+\pagebreak
 また、音速と空気吸収は\textgt{式}\ref{eq:speed_of_sound}と\textgt{式}\ref{eq:air_absorption}により定められる。本研究では一般的な室内を想定し、$\theta$=20[{\kern-.2em\r{}\kern-.3em C}]、$\phi=50[\%]$とした。すなわち、$c=343$[m/s]、 $m_b=0.63\times10^{-3}$[m$^{-1}$](500Hz)の条件下で解析を行った。
 
 \begin{equation}
@@ -185,6 +193,7 @@ Wall \_ stage            & Acoustic reflector                        & 0.10 & 0.
 \end{table}
 %%%%%%%%%%%%%%%%%%%
 
+\begin{table}[htbp]
 \begin{equation}
  \label{eq:付加乱反射率計算式}
  s_{\scalebox{0.5}{effective}} = s_{\scalebox{0.5}{surface}} + \frac{s_{\scalebox{0.5}{edge}}
@@ -194,7 +203,7 @@ Wall \_ stage            & Acoustic reflector                        & 0.10 & 0.
 \hspace{2cm}$s_{\scalebox{0.5}{surface}}$ : The normal surface scattering coefficient\\
 \hspace{2cm}$S_{\scalebox{0.5}{edge}}$ : The area of an edge quarter of a wavelength wide\\
 \hspace{2cm}$S_{\scalebox{0.5}{surface}}$ : The complete plane or sub-plane area\\
-
+\end{table}
 
 \begin{figure}[htbp]
     \centering
