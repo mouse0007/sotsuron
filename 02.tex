@@ -17,7 +17,7 @@
 \section{解析条件}
 本研究で用いる幾何音響解析ソフトには3つの解析タイプ(Audio area mapping, Early part detailed, Full detailed calculation)があり、それぞれ音線法、鏡像法、Randomized Tail-corrected Cone-tracing method (RTC)により計算される(\textgt{表}\ref{3つの解析タイプ})。
 RTCとは音線の先に円の有限領域をもたせるCone-tracingと標準的な音線法及び鏡像法をハイブリッドした解析手法である。
-\\　本研究ではこれらのうち、後期反射音までのインパルス応答を算出するFull detailed calculationから室内音響物理指標を、9次反射音までのインパルス応答(方向情報含む)[\textgt{図}\ref{fig:Early_IR}]を算出するEarly part detailedから方向別物理量を各々求めた。それぞれ解析条件を\textgt{表}\ref{Full_set}及び\textgt{表}\ref{Early_set}に示す。
+\\　本研究ではこれらのうち、後期反射音までのインパルス応答を算出するFull detailed calculationから室内音響物理指標を、9次反射音までのインパルス応答(方向情報含む)[\textgt{図}\ref{fig:Early_IR}]を算出するEarly part detailedから方向別物理量を各々求めた。解析条件を解析タイプ別に\textgt{表}\ref{Full_set}と\textgt{表}\ref{Early_set}に示す。
 \\
 % 3つの解析手法について
 \begin{table}[htbp]
@@ -27,12 +27,12 @@ RTCとは音線の先に円の有限領域をもたせるCone-tracingと標準�
 \resizebox{\textwidth}{!}{%
 \begin{tabular}{ccccc}
 \Hline
-Prediction methods & Name & \multicolumn{3}{c}{Output data} \\ \cline{3-5} 
+Type & Prediction methods & \multicolumn{3}{c}{Output data} \\ \cline{3-5} 
  &  & \multicolumn{2}{c}{Impulse response} & Room acoustic parameters \\ \cline{3-4}
  &  & \multicolumn{1}{c|}{Time domain} & Spatial information &  \\ \hline
-Ray-tracing method & Audio area mapping & $\times$ & $\times$ & $\bigcirc$ \\
-Image source method & Early part detailed & Early part only & $\bigcirc$ & $\times$ \\
-RTC method & Full detailed calculation & Full & $\bigtriangleup^{*}$ & $\bigcirc$ \\ \Hline
+Audio area mapping & Ray-tracing method & $\times$ & $\times$ & $\bigcirc$ \\
+Early part detailed & Image source method & Early part only & $\bigcirc$ & $\times$ \\
+Full detailed calculation & RTC method & Full & $\bigtriangleup^{*}$ & $\bigcirc$ \\ \Hline
 \multicolumn{5}{l}{$^{*}$ : limited spatial information}
 \end{tabular}%
 }
