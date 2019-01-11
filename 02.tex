@@ -1,4 +1,5 @@
 \chapter{空間全体を対象とした幾何音響解析}
+
 \section{幾何音響解析手法について}
 幾何音響解析手法とは、音の波動としての性質を無視して、その伝搬を幾何的に取り扱う手法のことである$^{\text{\cite{02-5}}}$。非常に直感的で理解しやすい方法であり、あまり多くの計算機資源を必要とせず、計算時間も波動音響解析手法と比べ短いため、大規模空間を扱う際の現実的手法として広く用いられている。厳密な予測が必要となる詳細設計の段階では音響縮尺模型実験や波動音響解析に頼らざるを得ないが、基本計画段階における検討や初期反射音構造の予測等に対しては大変有用であると考えられている。
 幾何音響学に基づいた代表的なコンピュータシミュレーション手法として、音線法と鏡像法が挙げられる(\textgt{図}\ref{fig:音線法と鏡像法})。
@@ -14,9 +15,32 @@
 \end{figure}
 
 \section{解析条件}
-本研究で用いる幾何音響解析ソフトには3つの解析タイプ(Audio area mapping, Early part detailed, Full detailed calculation)があり、それぞれ音線法、鏡像法、Randomized Tail-corrected Cone-tracing(RTC)により計算される。
+本研究で用いる幾何音響解析ソフトには3つの解析タイプ(Audio area mapping, Early part detailed, Full detailed calculation)があり、それぞれ音線法、鏡像法、Randomized Tail-corrected Cone-tracing(RTC)により計算される(\textgt{表}\ref{3つの解析タイプ})。
 RTCとは音線の先に円の有限領域をもたせるCone-tracingと標準的な音線法及び鏡像法をハイブリッドした解析手法である。
 \\　本研究ではこれらのうち、後期反射音までのインパルス応答を算出するFull detailed calculationから室内音響物理指標を、初期反射音までのインパルス応答(方向情報含む)を算出するEarly part detailedから方向別物理量を各々求めた。それぞれの解析タイプで出力されるインパルス応答を\textgt{図}\ref{fig:Full_IR}と\textgt{図}\ref{fig:Early_IR}に、解析条件を\textgt{表}\ref{Full_set}及び\textgt{表}\ref{Early_set}に示す。
+
+\begin{table}[htbp]
+\centering
+\caption{解析手法と出力データ}
+\label{3つの解析タイプ}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{ccccc}
+\Hline
+Prediction methods & Name & \multicolumn{3}{c}{Output data} \\ \cline{3-5} 
+ &  & \multicolumn{2}{c}{Impulse response} & Room acoustic parameters \\ \cline{3-4}
+ &  & \multicolumn{1}{c|}{Time domain} & Spatial information &  \\ \Hline
+Ray-tracing method & Audio area mapping & - & - & Inclusion \\
+Image source method & Early part detailed & Early part only & Inclusion & - \\
+RTC & Full detailed calculation & Full & Limited inclusion & Inclusion \\ \Hline
+\end{tabular}%
+}
+\end{table}
+
+
+
+
+
+
 \\　また、音速と空気吸収は\textgt{式}\ref{eq:speed_of_sound}と\textgt{式}\ref{eq:air_absorption}により定められる。本研究では一般的な室内を想定し、$\theta$=20[{\kern-.2em\r{}\kern-.3em C}]、$\phi=50[\%]$とした。すなわち、$c=343$[m/s]、 $m_b=0.63\times10^{-3}$[m$^{-1}$](500Hz)で解析を行った。
 
 \begin{equation}
