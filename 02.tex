@@ -14,10 +14,10 @@
 \end{figure}
 
 \section{解析条件}
-本研究で用いる幾何音響解析ソフトには3つの解析タイプ(Audio area mapping, Early part detailed, Full detailed calculation)があり、それぞれ音線法、鏡像法、Randomized Tail-corrected Cone-tracing(RTC)の手法が用いられている。
+本研究で用いる幾何音響解析ソフトには3つの解析タイプ(Audio area mapping, Early part detailed, Full detailed calculation)があり、それぞれ音線法、鏡像法、Randomized Tail-corrected Cone-tracing(RTC)により計算される。
 RTCとは音線の先に円の有限領域をもたせるCone-tracingと標準的な音線法及び鏡像法をハイブリッドした解析手法である。
-\\　本研究では、これらのうち後期音までのインパルス応答を算出するFull detailed calculationと、方向情報を含む初期音のインパルス応答を算出するEarly part detailedの2つの解析タイプを使用した。それぞれの解析タイプで出力されるインパルス応答を\textgt{図}\ref{fig:Full_IR}と\textgt{図}\ref{fig:Early_IR}に、解析条件を\textgt{表}\ref{Full_set}及び\textgt{表}\ref{Early_set}に示す。
-\\　また、音速と空気吸収は\textgt{式}\ref{eq:speed_of_sound}と\textgt{式}\ref{eq:air_absorption}により設定される。解析では一般的な室内を想定し、気温\(20^\circ\)、相対湿度50\%、空気の比重を1.2kg/m$^3$に設定した。
+\\　本研究ではこれらのうち、後期反射音までのインパルス応答を算出するFull detailed calculationから室内音響物理指標を、初期反射音までのインパルス応答(方向情報含む)を算出するEarly part detailedから方向別物理量を各々求めた。それぞれの解析タイプで出力されるインパルス応答を\textgt{図}\ref{fig:Full_IR}と\textgt{図}\ref{fig:Early_IR}に、解析条件を\textgt{表}\ref{Full_set}及び\textgt{表}\ref{Early_set}に示す。
+\\　また、音速と空気吸収は\textgt{式}\ref{eq:speed_of_sound}と\textgt{式}\ref{eq:air_absorption}により定められる。本研究では一般的な室内を想定し、$\theta$=20[{\kern-.2em\r{}\kern-.3em C}]、$\phi=50[\%]$とした。すなわち、$c=343$[m/s]、 $m_b=0.63\times10^{-3}$[m$^{-1}$](500Hz)で解析を行った。
 
 \begin{equation}
  \label{eq:speed_of_sound}
@@ -77,7 +77,7 @@ m_b = \mathrm{from \; ISO \; 9613.1^{\text{\cite{organizacion1993iso}}} \; based
 %%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \caption{解析モデルの吸音率}
 \label{解析モデルの吸音率}
@@ -132,7 +132,6 @@ Wall \_ stage            & Acoustic reflector                        & 0.10 & 0.
 \end{table}
 %%%%%%%%%%%%%%%%%%%
 
-\pagebreak
 \begin{equation}
  \label{eq:付加乱反射率計算式}
  s_{\scalebox{0.5}{effective}} = s_{\scalebox{0.5}{surface}} + \frac{s_{\scalebox{0.5}{edge}}
@@ -144,7 +143,7 @@ Wall \_ stage            & Acoustic reflector                        & 0.10 & 0.
 \hspace{3cm}$S_{\scalebox{0.5}{surface}}$ : The complete plane or sub-plane area\\
 
 
-\begin{figure}[H]
+\begin{figure}[htbp]
     \centering
     \includegraphics[keepaspectratio,scale=0.8]{02_att/edge.pdf}
     \caption{\hspace{1mm}壁面端部から$\lambda$/4分の面積}
@@ -152,7 +151,7 @@ Wall \_ stage            & Acoustic reflector                        & 0.10 & 0.
 \end{figure}
 
 %%%%%%%%%%%%%%%%%%%
-\begin{table}[H]
+\begin{table}[htbp]
 \centering
 \caption{端部散乱を適用する面}
 \label{端部散乱を適用する面}
