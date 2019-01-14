@@ -1,8 +1,13 @@
 \chapter{評価手法}
-\section{一元配置分散分析}
-距離に依存しない指標の分析
+\section{分散分析}
+観測高さ間において音響物理的に違い室内音響物理指標や物理量の平均値の差を検定するにあたり、分散分析を用いる。
+分散分析とは、3群以上からなるデータの母平均の差を検定する
+\subsection{一元配置分散分析}
+母平均の差の検定を行う。
+観測点高さごとの平均値を比較する際、水準間変動の方が水準内変動よりも大きければ
+一元配置分散分析を用い、観測点高さごとに距離に依存しない指標の分析$^{\text{\cite{bunsanbunseki}}}$
 
-\section{共分散分析}
+\subsection{共分散分析}
 距離に依存する指標の分析
 
 \section{室内音響物理指標の弁別閾}
@@ -24,4 +29,37 @@ Apparent source width (ASW) & $LF${[}\%{]} & 500 to 1000 & 5{[}\%{]} \\
 \Hline
 \multicolumn{4}{l}{$^{*}$ : The single number frequency averaging denotes the arithmetical average for the octave bands.}
 \end{tabular}
+\end{table}
+
+\section{室内音圧レベル分布に関する理論値}
+従来の室内音響理論においては、拡散音の音圧レベルは距離によらず一定になる。
+しかし、コンサートホールの実測調査では、これに当てはまらない結果を示すものがあった。
+そこでBarronは拡散音が距離によって減衰するという修正理論$^{\text{\cite{barron1988energy}}}$を提案している。
+\\　Barron's revised theoryではインパルス応答を直接音($d$)、初期反射音領域($e_r$ : t \textless 80 ms)、後期反射音領域($l$ : t \textgreater 80 ms)と時間軸上で分けて扱っている。ここで、$r$は音源-観測点間距離[m]、$T$は残響時間[s]、$V$は室容積[m$^3$]を表す。
+\begin{table}[htbp]
+    \begin{equation}
+        \label{eq:d}
+        d=\frac{100}{r^2}
+    \end{equation}
+    \begin{equation}
+        e_r=\frac{31200T}{V}e^{\frac{-0.04r}{T}}(1-e^{\frac{-1.11}{T}})
+    \end{equation}
+    \begin{equation}
+        l=\frac{31200T}{V}e^{\frac{-0.04r}{T}}e^{\frac{-1.11}{T}}
+    \end{equation}
+\end{table}
+\\　$d$、$e_r$、$l$を用いて室内音響物理指標$C_{80}$や$G$の理論値が算出可能となる。以後、音場の評価を行う際はBarron's revised theoryによる理論値との比較検討を行う。
+\begin{table}[htbp]
+    \begin{equation}
+        G=10\log_{10}(d+e_r+l)\hspace{2mm}\dB
+    \end{equation}
+    \begin{equation}
+        C_{80}=10\log_{10}\frac{d+e_r}{l}\hspace{2mm}\dB
+    \end{equation}
+        \begin{equation}
+        G_{early}=10\log_{10}(d+e_r)\hspace{2mm}\dB
+    \end{equation}
+    \begin{equation}
+        VG_{early}=LG_{early}=GG_{early}=10\log_{10}\frac{d+e_r}{3}\hspace{2mm}\dB
+    \end{equation}
 \end{table}

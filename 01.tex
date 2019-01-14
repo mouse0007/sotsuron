@@ -73,30 +73,50 @@
 \end{equation}
 
 \subsubsection{残響感(Reverberance)に対応する物理指標}
-聴感的な響きの長さは、残響過程の比較的初期の減衰の仕方に影響を受けることが明らかにされており、初期残響時間EDT[s]が残響感に対応する物理指標として提案されている。これは、残響時間が60dB減衰に要する時間であるのに対し、初期の10dB減衰の傾きから算出した残響時間であり、10dB減衰に要する時間を6倍にしたものとして算出される。
+聴感的な響きの長さは、残響過程の比較的初期の減衰の仕方に影響を受けることが明らかにされており、初期残響時間$EDT$[s]が残響感に対応する物理指標として提案されている。これは、残響時間が60dB減衰に要する時間であるのに対し、初期の10dB減衰の傾きから算出した残響時間であり、10dB減衰に要する時間を6倍にしたものとして算出される。
 
 \subsubsection{明瞭性(Clarity)に対応する物理指標}
-初期反射音は、直接音をエネルギー的に補強し聴感的な明瞭性を高める効果がある。そこで、この初期反射音のエネルギーに着目し、音楽の明瞭度に対応する物理指標として初期/ 後期エネルギー比 \Clarity(Clarity) が\textbf{式}\ref{eq:c80}により定義されている。これは、初期反射音以外のエネルギー(t=80ms$\sim\infty$、後期反射音)に対する初期反射音エネルギー(t=0$\sim$80ms:直接音を含む)の割合をデシベル表示したものである。初期反射音エネルギーが増加するほど値は大きくなり、聴感的な明瞭性が増すことを意味する。
+初期反射音は、直接音をエネルギー的に補強し聴感的な明瞭性を高める効果がある。そこで、この初期反射音のエネルギーに着目し、音楽の明瞭度に対応する物理指標として初期/ 後期エネルギー比 \Clarity(Clarity) が、話声に対応する物理指標として$D_{50}$(Deutlichkeit)がそれぞれ定義されている。これらは、後期反射音に対する初期反射音エネルギーの割合を表したものである。初期反射音エネルギーが増加するほど値は大きくなり、聴感的な明瞭性が増すことを意味する。
 
 \begin{equation}
     \label{eq:c80}
   C_{80} = 10\log_{10}{\frac{\displaystyle\int_0^{80}p^2(t)dt}{\displaystyle\int_0^{\infty}p^2(t)dt}} \dB
 \end{equation}
 
+\begin{equation}
+    \label{eq:c80}
+  D_{50} = {\frac{\displaystyle\int_0^{50}p^2(t)dt}{\displaystyle\int_0^{\infty}p^2(t)dt}} 
+\end{equation}
+
 \subsubsection{広がり感(Spatial impression)に対応する物理指標}
 室内では、さまざまな方向から反射音が到来する。これらの反射音のうち、両耳の方向から到来する反射音(側方反射音 : lateral reflection)が広がり感の知覚に強く関係している。
-この側方エネルギー成分に着目し、みかけの音源の幅(ASW)に対応する物理指標として初期側方反射エネルギー率LF(Lateral energy fraction)が\textbf{式}\ref{eq:lf}により提案されている。ここで、$p(t)$は観測点における音圧、$\theta$は反射波の入射方向と受聴者の両耳軸のなす角度(真横 : $\theta = 0^\circ$、正面 : $\theta = 90^\circ$)である。
+この側方エネルギー成分に着目し、みかけの音源の幅(ASW)に対応する物理指標として初期側方反射エネルギー率$LF$(Lateral energy fraction)が\textbf{式}\ref{eq:lf}により提案されている。ここで、$p(t)$は観測点における音圧、$\theta$は反射波の入射方向と受聴者の両耳軸のなす角度(真横 : $\theta = 0^\circ$、正面 : $\theta = 90^\circ$)である。
 
 \begin{equation}
     \label{eq:lf}
-  LF = \frac{\displaystyle\int_5^{80}p^2(t)cos{\theta}dt}{\displaystyle\int_0^{80}p^2(t)dt} \dB
+  LF = \frac{\displaystyle\int_5^{80}p^2(t)cos{\theta}dt}{\displaystyle\int_0^{80}p^2(t)dt} 
 \end{equation}
 
 
 %-------------------------------------------------------------
 \pagebreak
 \subsection{フライングバルコニーを有するホールの事例}
-Philharmonie de Parisを例にフライングバルコニーの紹介、本研究のテーマに近いホールがあることを示し、本テーマは突拍子もないことではないことを示す。
+座席面遠方音場で音楽鑑賞をするとき、当然コンサートホールもそれに合わせた形態が要求される。この概念に近い建築としてフライングバルコニー(Flying balcony)を有するコンサートホールが挙げられる。
+フライングバルコニーとは有効な反射音が届きにくいバルコニー下部空間を改善するための建築的な解法$^{\text{\cite{flying}}}$であり、バルコニーとバルコニー後壁の間に吹き抜けが設けられている。このとき、フライングバルコニーは文字通り宙に浮いたような形態をとる(\figref{flyigbalcony})。
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[keepaspectratio,scale=1]{01_att/flyingbalcony.pdf}
+    \caption{\hspace{1mm}Concept of flying balcony$^1$}
+    \label{fig:flyigbalcony}
+\end{figure}
+フライングバルコニーを有するコンサートホールとしてPhilharmonie de parisが挙げられる。
+
+
+\addtocounter{footnote}{1}
+\footnotetext{M.David Egan.ARCHITECTURAL ACOUSTICS. McGraw-Hill Book Company, p146, 1988.より引用}
+\addtocounter{footnote}{1}
+\footnotetext{http://www.nagata.co.jp/news/news1503.htmlより引用（2018.1.15閲覧）}
+
 %-------------------------------------------------------------
 \pagebreak
 \subsection{本論の位置づけ}
