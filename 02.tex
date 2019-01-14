@@ -41,7 +41,7 @@ Full detailed calculation & RTC method & Full & $\bigtriangleup^{*}$ & $\bigcirc
 \begin{figure}[htbp]
     \centering
     \includegraphics[keepaspectratio,scale=1]{02_att/Early_IR.pdf}
-    \caption{\hspace{1mm}Early part detailedによるインパルス応答}
+    \caption{\hspace{1mm}Early part detailedにより算出されたインパルス応答}
     \label{fig:Early_IR}
 \end{figure}
 
@@ -116,11 +116,28 @@ m_b = \mathrm{from \; ISO \; 9613.1^{\text{\cite{organizacion1993iso}}} \; based
 
 \subsection{形状の設計}
 現存するホールを参考$^{\text{\cite{02-1}}}$に(A)矩形モデル及び(B)扇形モデルの設計を行った。
-両ホールの断面図及び平面図を\textgt{図}\ref{fig:(A)矩形モデル及び(B)扇形モデルの断面図}、\textgt{図}\ref{fig:(A)矩形モデル平面図}、\textgt{図}\ref{fig:(A)矩形モデル平面図}に示す。
+両ホールの断面図及び平面図を\textgt{図}\ref{fig:(A)矩形モデル及び(B)扇形モデル断面図}と\textgt{図}\ref{fig:(A)矩形モデル及び(B)扇形モデル平面図}に示す。
+
+\newpage
+%-------------------------------------------------------------------------
+\begin{figure}[H]
+    \centering
+    \includegraphics[keepaspectratio,scale=0.99]{02_att/rec_fan_zumen_1.pdf}
+    \caption{\hspace{1mm}(A)矩形モデル及び(B)扇形モデル断面図}
+    \label{fig:(A)矩形モデル及び(B)扇形モデル断面図}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[keepaspectratio,scale=0.99]{02_att/rec_fan_zumen_2.pdf}
+    \caption{\hspace{1mm}(A)矩形モデル及び(B)扇形モデル平面図}
+    \label{fig:(A)矩形モデル及び(B)扇形モデル平面図}
+\end{figure}
 
 \subsection{吸音率の設定}
 室の内装面は客席床と後壁を吸音性、その他の面を反射性とし、両ホールの残響時間が等しくなるように現実的な吸音率(250$\sim$2kHz)$^{\text{\cite{01-3}\cite{02-1}\cite{02-2}}}$を設定した。客席床の吸音率については国内の標準的な1席(人+モケット張り椅子)の吸音力$^{\text{\cite{02-4}}}$を1席あたりの床面積(=0.6m$^2$)で除した値(\textgt{表}\ref{客席面の吸音率})を用いた。解析モデルに用いた吸音率を\textgt{表}\ref{解析モデルの吸音率}に示す。
-
+\\
+\\
 %%%%%%%%%%%%%%%%%%%
 \begin{table}[htbp]
 \begin{center}
@@ -136,7 +153,8 @@ m_b = \mathrm{from \; ISO \; 9613.1^{\text{\cite{organizacion1993iso}}} \; based
 \end{center}
 \end{table}
 %%%%%%%%%%%%%%%%%%%
-
+\\
+\\
 %%%%%%%%%%%%%%%%%%%
 \begin{table}[htbp]
 \centering
@@ -158,19 +176,26 @@ Wall \_ stage            & Acoustic reflector                        & 0.15 & 0.
 }
 \end{table}
 %%%%%%%%%%%%%%%%%%%
-
+\pagebreak
 \subsection{乱反射率の設定}
 乱反射率(Scattering coefficient)はISO17497-1$^{\text{\cite{iso2004acoustics}}}$の中で壁面の全反射エネルギーに対する鏡面反射成分以外のエネルギーの割合として定義され、\textgt{式}\ref{eq:scatter}で表される。ここで$E_{total}$は全反射エネルギー、$E_{spec}$は鏡面反射エネルギーである。
+
 
 \begin{equation}
  \label{eq:scatter}
 s_{\theta}=1-\frac{E_{spec}}{E_{total}}
 \end{equation}
-\\　解析では、周波数に応じて座席部に0.3$\sim$0.7を、それ以外の面に0.1を与えた$^{\text{\cite{02-3}}}$。
+
+\vspace{0.8cm}
+
+解析では、周波数に応じて座席部に0.3$\sim$0.7を、それ以外の面に0.1を与えた$^{\text{\cite{02-3}}}$。
 解析モデルに用いた乱反射率を\textgt{表}\ref{解析モデルの乱反射率}に示す。\\
 　また、壁面隅角部における音の散乱(端部散乱)を考慮した乱反射率を与える研究$^{\text{\cite{02-7}}}$が進められている。
 壁面端部から$\lambda$/8分の面積を1、それ以外の面積を0として面積平均した乱反射率を吸音面の接合面に与えたときに実測との対応が良くなることが既往の研究$^{\text{\cite{02-8}}}$から明らかになっているが、これは本研究で使用する幾何音響解析ソフトの端部散乱を考慮した乱反射率(壁面端部から$\lambda$/4分の面積を0.5、それ以外の面積を0として面積平均したもの(\textgt{式}\ref{eq:付加乱反射率計算式}、\textgt{図}\ref{fig:壁面端部}))に近似する。
 解析モデルにおいて端部散乱を考慮した面を\textgt{表}\ref{端部散乱を適用する面}に示す。
+
+\vspace{0.8cm}
+
 %%%%%%%%%%%%%%%%%%%
 \begin{table}[htbp]
 \centering
@@ -192,6 +217,8 @@ Wall \_ stage            & Acoustic reflector                        & 0.10 & 0.
 }
 \end{table}
 %%%%%%%%%%%%%%%%%%%
+
+\vspace{0.8cm}
 
 \begin{table}[htbp]
 \begin{equation}
