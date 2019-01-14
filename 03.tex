@@ -1,5 +1,27 @@
 \chapter{評価手法}
 \section{一元配置分散分析}
-残響時間は正規分布に従うため、一元配置分散分析を行う。
+距離に依存しない指標の分析
+
 \section{共分散分析}
-EDTを観測高さごとに比較するため、ノンパラメトリック分散分析を行う。
+距離に依存する指標の分析
+
+\section{室内音響物理指標の弁別閾}
+水準間に有意な差があったとき、その差は人間が知覚できるほどの変化量であるかどうかをJND ( just noticeable difference : 感覚上ちょうど感知できる物理刺激の最小変化量 ) を用いて判断する。
+ISO3382-1$^{\text{\cite{iso3382}}}$に整理されている室内音響物理指標の弁別閾(JND)を\tabref{jnd}に示す。
+
+\begin{table}[htbp]
+\centering
+\caption{\hspace{1mm}JND of each acoustic parameters}
+\label{tab:jnd}
+\begin{tabular}{lccc}
+\Hline
+\multicolumn{1}{c}{Subjective listener aspect} & Acoustic quantity & \begin{tabular}[c]{@{}c@{}}Single number\\ freq. ave.$^*${[}Hz{]}\end{tabular} & \begin{tabular}[c]{@{}c@{}}Just noticeable difference\\ (JND)\end{tabular} \\ \hline
+Subjective level of sound & $G${[}dB{]} & 500 to 1000 & 1[dB] \\
+Perceived reverberance & $EDT${[}s{]} & 500 to 1000 & Rel.5[\%] \\
+Perceived clarity of sound & $C_{80}${[}dB{]} & 500 to 1000 & 1[dB] \\
+ & $D_{50}${[}\%{]} & 500 to 1000 & 5{[}\%{]} \\
+Apparent source width (ASW) & $LF${[}\%{]} & 500 to 1000 & 5{[}\%{]} \\
+\Hline
+\multicolumn{4}{l}{$^{*}$ : The single number frequency averaging denotes the arithmetical average for the octave bands.}
+\end{tabular}
+\end{table}

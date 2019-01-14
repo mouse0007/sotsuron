@@ -257,11 +257,13 @@
 \renewcommand{\arraystretch}{0.8} %表
 
 % 図・表のキャプションの設定
-\captionsetup[figure]{format=plain, labelformat=simple, labelsep=space}
-\captionsetup[table]{format=plain, labelformat=simple, labelsep=space}
+\captionsetup[figure]{format=plain, labelformat=simple, labelsep=space, font={bf}}
+\captionsetup[table]{format=plain, labelformat=simple, labelsep=space, font={bf}}
 
-\renewcommand{\figurename}{\textgt{図}}
-\renewcommand{\tablename}{\textgt{表}}
+\newcommand\figref[1]{\textbf{Fig~\ref{fig:#1}}}
+\newcommand\tabref[1]{\textbf{Table~\ref{tab:#1}}}
+\renewcommand{\figurename}{\textbf{Fig}}
+\renewcommand{\tablename}{\textbf{Table}}
 
 %表組みに太い線を設定
 \newlength\savedwidth
