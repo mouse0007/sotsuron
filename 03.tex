@@ -1,22 +1,10 @@
 \chapter{評価手法}
-\section{分散分析}
-観測高さ間における室内音響物理指標や音響物理量の違いをみるため、分散分析を用いる。
-分散分析とは、3群以上からなるデータの母平均の差を検定であり、
-
-\subsection{一元配置分散分析}
-要因が異なる複数の標本の母平均が等しい(複数の標本から求められた平均値が、同じ母平均を持つ母集団から抽出された)という仮説を検定することにより、要因の違いにより複数の標本の母平均に
-
-母平均の差の検定を行う。
-観測点高さごとの平均値を比較する際、水準間変動の方が水準内変動よりも大きければ
-一元配置分散分析を用い、観測点高さごとに距離に依存しない指標の分析$^{\text{\cite{bunsanbunseki}}}$
-
-\subsection{共分散分析}
-距離に依存する指標の分析
+\section{一元配置分散分析}
+観測高さ間における室内音響物理指標や音響物理量の違いをみるため、一元配置分散分析を用いる。これは、要因が異なる複数の標本の母平均が等しい(複数の標本から求められた平均値が、同じ母平均を持つ母集団から抽出された)という仮説を検定することにより、要因の違いにより複数の標本の母平均に違いがあるか(つまり要因の違いに意味があるか)を検討するものである$^{\text{\cite{kanno}}}^{\text{\cite{池田1}}}^{\text{\cite{池田2}}}^{\text{\cite{池田3}}}$。
 
 \section{室内音響物理指標の弁別閾}
 水準間に有意な差があったとき、その差は人間が知覚できるほどの変化量であるかどうかをJND ( just noticeable difference : 感覚上ちょうど感知できる物理刺激の最小変化量 ) を用いて判断する。
-ISO3382-1$^{\text{\cite{iso3382}}}$に整理されている室内音響物理指標の弁別閾(JND)を\tabref{jnd}に示す。
-
+ISO3382-1$^{\text{\cite{iso3382}}}$に整理されている室内音響物理指標の弁別限(JND)を\tabref{jnd}に示す。
 \begin{table}[htbp]
 \centering
 \caption{\hspace{1mm}JND of each acoustic parameters}
@@ -27,13 +15,14 @@ ISO3382-1$^{\text{\cite{iso3382}}}$に整理されている室内音響物理指
 Subjective level of sound & $G${[}dB{]} & 500 to 1000 & 1[dB] \\
 Perceived reverberance & $EDT${[}s{]} & 500 to 1000 & Rel.5[\%] \\
 Perceived clarity of sound & $C_{80}${[}dB{]} & 500 to 1000 & 1[dB] \\
- & $D_{50}${[}\%{]} & 500 to 1000 & 5{[}\%{]} \\
+" & $D_{50}${[}\%{]} & 500 to 1000 & 5{[}\%{]} \\
 Apparent source width (ASW) & $LF${[}\%{]} & 500 to 1000 & 5{[}\%{]} \\
 \Hline
 \multicolumn{4}{l}{$^{*}$ : The single number frequency averaging denotes the arithmetical average for the octave bands.}
 \end{tabular}
 \end{table}
 
+\pagebreak
 \section{室内音圧レベル分布に関する理論値}
 従来の室内音響理論においては、拡散音の音圧レベルは距離によらず一定になる。
 しかし、コンサートホールの実測調査では、これに当てはまらない結果を示すものがあった。
@@ -51,18 +40,22 @@ Apparent source width (ASW) & $LF${[}\%{]} & 500 to 1000 & 5{[}\%{]} \\
         l=\frac{31200T}{V}e^{\frac{-0.04r}{T}}e^{\frac{-1.11}{T}}
     \end{equation}
 \end{table}
-\\　$d$、$e_r$、$l$を用いて室内音響物理指標$C_{80}$や$G$の理論値が算出可能となる。以後、音場の評価を行う際はBarron's revised theoryによる理論値との比較検討を行う。
+\\　$d$、$e_r$、$l$を用いて室内音響物理指標$G$や$C_{80}$との理論値が算出可能となる。以後、音場の評価を行う際はBarron's revised theoryによる理論値との比較検討を行う。
 \begin{table}[htbp]
     \begin{equation}
         G=10\log_{10}(d+e_r+l)\hspace{2mm}\dB
     \end{equation}
     \begin{equation}
-        C_{80}=10\log_{10}\frac{d+e_r}{l}\hspace{2mm}\dB
-    \end{equation}
-        \begin{equation}
-        G_{early}=10\log_{10}(d+e_r)\hspace{2mm}\dB
+        G_{late}=10\log_{10}(l)\hspace{2mm}\dB
+\\
     \end{equation}
     \begin{equation}
-        VG_{early}=LG_{early}=GG_{early}=10\log_{10}\frac{d+e_r}{3}\hspace{2mm}\dB
+        C_{80}=10\log_{10}\frac{d+e_r}{l}\hspace{2mm}\dB
     \end{equation}
+
+%        \begin{equation}
+%        G_{early}=10\log_{10}(d+e_r)\hspace{2mm}\dB
+%    \begin{equation}
+%        VG_{early}=LG_{early}=GG_{early}=10\log_{10}\frac{d+e_r}{3}\hspace{2mm}\dB
+%   \end{equation}
 \end{table}

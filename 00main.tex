@@ -14,7 +14,7 @@
 
 %レイアウト確認
 %\usepackage{layout}
-
+%\usepackage{pdfpages}
 \usepackage{ascmac}
 \usepackage{here}				%図を強制的に出力する
 \usepackage{amsmath}			%枠組み・数式用パッケージ
@@ -49,9 +49,6 @@
 \include{05}
 \include{06}
 \include{07}
-\include{08}
-\include{09}
-\include{10}
 
 %******** 付 属 品 **********************************
 \include{90_acknowledgment}	% 謝辞。要独自コマンド、include先参照のこと
@@ -70,6 +67,7 @@
   \clearpage
 %\fi
 
+\end{document}
 
 \begin{landscape}
 \begin{figure}[htpb]
@@ -79,29 +77,29 @@
       \begin{minipage}{0.25\linewidth}
         \centering
           \includegraphics[keepaspectratio,width=\linewidth,angle=0]
-                          {rec_source/80contD_1_2m.png}
+                          {04_att/80contD_1_2m.png}
       \end{minipage}
 %----- y = sin(2x) -----
       \begin{minipage}{0.25\linewidth}
         \centering
           \includegraphics[keepaspectratio,width=\linewidth,angle=0]
-                          {rec_source/80contD_1_2m.pdf}
+                          {04_att/80contD_1_2m.pdf}
       \end{minipage}
 %----- y = sin(3x) -----
       \begin{minipage}{0.25\linewidth}
         \centering
           \includegraphics[keepaspectratio,width=\linewidth,angle=0]
-                          {rec_source/80contD_1_2m.pdf}
+                          {04_att/80contD_1_2m.pdf}
       \end{minipage}
 %----- y = sin(4x) -----
       \begin{minipage}{0.25\linewidth}
         \centering
           \includegraphics[keepaspectratio,width=\linewidth,angle=0]
-                          {rec_source/80contD_1_2m.pdf}
+                          {04_att/80contD_1_2m.pdf}
        \end{minipage}
     \end{tabular}
+\\
+
 \end{figure}
 %\layout{} %レイアウトの様子を
 \end{landscape}
-
-\end{document}

@@ -7,7 +7,7 @@
 \subsection{2階バルコニー最前列席の音響的評価}
 この世に存在する全てのオーディトリウムはいずれも室固有の響きを持っており、それは室を構成する形と内装条件によって決定づけられる。一般的な音響設計では、どの客席においても一様な反射音が到達するよう計画される。
 ここで、収容人数や舞台へ向けての視野を確保する観点から、オーディトリウムにバルコニー席を設けることが多々ある。このとき、バルコニー先端部は前方に客席がなく、ホール空間へ張り出した特異な場となる。
-\\　さて、2階バルコニー最前列の座席は、音響的に高い評価を得ることが多い$^{\text{\cite{01-1}}}$。これは、ホール空間が有する吸音力の大半(500Hzで7割程度)$^{\text{\cite{01-2}}}$を受け持っている1階客席床面(椅子+聴衆の吸音力)から相対的に離れた場所に位置するため、エネルギ減衰の少ない有効な直接音や反射音を得やすいことに起因すると定性的に推察されている(\textbf{Fig}\ref{fig:2階バルコニー最前列席の音場})。
+\\　さて、2階バルコニー最前列の座席は、音響的に高い評価を得ることが多い$^{\text{\cite{01-1}{\cite{AAAD}}}}$。これは、ホール空間が有する吸音力の大半(500Hzで7割程度)$^{\text{\cite{01-2}{\cite{椅子吸音}}}}$を受け持っている1階客席床面(椅子+聴衆の吸音力)から相対的に離れた場所に位置するため、エネルギ減衰の少ない有効な直接音や反射音を得やすいことに起因すると定性的に推察されている(\figref{2階バルコニー最前列席の音場})。
 \\
 \\
 \begin{figure}[h]
@@ -21,17 +21,21 @@
 \newpage
 \subsection{評価対象領域の拡張}
 美しい響きを生み出すにあたり、室容積は人間を収容するには冗長な大きさを要する。規模により異なるものの、室容積から算出されるホールの天井高はおおよそ10$\sim$20mである。ホール空間は人が鑑賞可能なエリアを断面方向含め無数に拡張できるというポテンシャルを秘めているにも関わらず、オーディトリウムの底で鑑賞をするという様式は依然として変わっていない。
-\\　建築音響学が体系化した1900年以後$^{\text{\cite{01-3}}}$、ホールの音響性能について種々研究が行われているものの、音場測定や解析シミュレーションによる音場の評価は、当然のことながら、建築的に確定された客席床面(床面上高さ1$\sim$2m)における面的評価に留まっており、ホール空間全体を評価対象とした設計研究は皆無である。本研究では、前節で述べた知見を踏まえ、評価対象領域を3次元的に拡張した評価を試みる(\figref{評価対象領域の拡張})。
-\begin{figure}[h]
+\\　建築音響学が体系化した1900年以後$^{\text{\cite{01-3}}}$、ホールの音響性能について種々研究が行われているものの、音場測定や解析シミュレーションによる音場の評価は、当然のことながら、建築的に確定された客席床面(床面上高さ1$\sim$2m)における面的評価$^{\text{\cite{受音点選定}{\cite{最適位置}}}}$に留まっており、ホール空間全体を評価対象とした設計研究は皆無$^1$である。本研究では、前節で述べた知見を踏まえ、評価対象領域を3次元的に拡張した評価を試みる(\figref{評価対象領域の拡張})。
+\begin{figure}[htbp]
     \centering
     \includegraphics[keepaspectratio,scale=0.41]{01_att/evaluate_area.pdf}
     \caption{\hspace{1mm}\textbf{Expand of evaluation areas}}
     \label{fig:評価対象領域の拡張}
 \end{figure}
 
+\addtocounter{footnote}{1}
+\footnotetext{観測点を3次元上に配置した研究は行われている$^{\text{\cite{綿谷}}}$(壁面に対し床面あるいは天井面が高度な吸音性の場合、2次元的な拡散状態となり、3次元拡散音場に用いるSabineの残響式で計算した値よりも残響時間が長くなることから、2次元拡散音場の音響性状を明らかにする研究。なお、コンサートホールも吸音面が偏在した空間ではあるが、コンサートホールは壁面に拡散体が多数設置されているため、この音響性状は生じない)。}
+
+\pagebreak
 \subsection{研究目的}
 本研究は、コンサートホール音場の評価対象領域を、吸音力の大きな座席面近傍音場から3次元的に拡張し、座席面遠方音場(\figref{座席面遠方音場})の音響物理特性を明らかにすることにより、従来の面的評価並びにそれに基づく決定論的設計法に新たな可能性を見出すことを目的とするものである。
-\begin{figure}[h]
+\begin{figure}[htbp]
     \centering
     \includegraphics[keepaspectratio,scale=0.8]{01_att/zasekimen_enpo_English.pdf}
     \caption{\hspace{1mm}Sound fields far from seating area}
@@ -80,7 +84,7 @@
 
 \begin{equation}
     \label{eq:c80}
-  C_{80} = 10\log_{10}{\frac{\displaystyle\int_0^{80}p^2(t)dt}{\displaystyle\int_0^{\infty}p^2(t)dt}} \dB
+  C_{80} = 10\log_{10}{\frac{\displaystyle\int_0^{80}p^2(t)dt}{\displaystyle\int_{80}^{\infty}p^2(t)dt}} \dB
 \end{equation}
 
 \begin{equation}
@@ -94,7 +98,7 @@
 
 \begin{equation}
     \label{eq:lf}
-  LF = \frac{\displaystyle\int_5^{80}p^2(t)cos{\theta}dt}{\displaystyle\int_0^{80}p^2(t)dt} 
+  LF = \frac{\displaystyle\int_5^{80}p^2(t)cos^2{\theta}dt}{\displaystyle\int_0^{80}p^2(t)dt} 
 \end{equation}
 
 
@@ -106,14 +110,14 @@
 \begin{figure}[htbp]
     \centering
     \includegraphics[keepaspectratio,scale=1]{01_att/flyingbalcony.pdf}
-    \caption{\hspace{1mm}Concept of flying balcony$^1$}
+    \caption{\hspace{1mm}Concept of flying balcony$^2$}
     \label{fig:flyigbalcony}
 \end{figure}
 \\ 実際にフライングバルコニーを有するコンサートホールの例としてPhilharmonie de paris(\figref{pic_in1})が挙げられる。このホールではバルコニーがホール空間をゆるやかに二分しており、内側の空間で明瞭性を確保し、外側の空間で響きを与えている$^{\text{\cite{day2016philharmonie}}}$。
-図面各種$^2$を以下に示す。
+図面各種$^3$を以下に示す。
 \begin{figure}[htbp]
     \centering
-    \includegraphics[keepaspectratio,scale=0.2]{01_att/pic_in1.jpg}
+    \includegraphics[keepaspectratio,scale=0.2]{01_att/pic_in1.png}
     \caption{\hspace{1mm}Perspective image for interior space of Philharmonie de paris}
     \label{fig:pic_in1}
 \end{figure}
@@ -135,8 +139,7 @@
 \\　さて、関連した用語として従来より残響理論の仮定として用いられる「完全拡散音場」がある。これは、次の2条件を満たす音場のことである。
 \\(i)音響エネルギが室内全体に 均一に分布していること。
 \\(i\hspace{-.05em}i)どの点においても音の進行方向があらゆる方向に一様であること。
-\\　完全拡散音場は音像が定位せず、聴感的に好ましくないとされる音場ではあるが、物理的な拡散性を言及するにあたり上記2条件を拡散性評価の参考とする。
-\\　以上を踏まえ、本研究では室内音響物理指標のみならず、音場の物理的評価に立脚した拡散性の評価も行う。
+\\　完全拡散音場は音像が定位せず、聴感的に好ましくないとされる音場ではあるが、物理的な拡散性を言及するにあたり上記2条件を拡散性評価の参考とする。すなわち、(i)では代表的な音響物理指標の分布から音響エネルギ分布の一様性を評価し、(ii)では反射音方向分布の一様性から評価を行う。以上を総合し、本研究では音場の物理的評価に立脚した拡散性の評価を行う。
 \vspace{0.8cm}
 \begin{figure}[htbp]
     \centering
