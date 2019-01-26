@@ -1,7 +1,7 @@
 \newif\ifjapanese
 \japanesetrue % 論文全体を日本語で書く（英語で書くならコメントアウト）
 \ifjapanese
-	\documentclass[11pt]{jreport}
+	\documentclass[dvipdfmx, 11pt]{jreport}
 	\renewcommand{\bibname}{参考文献}
 	\newcommand{\acknowledgmentname}{謝辞}
 \else
@@ -14,7 +14,7 @@
 
 %レイアウト確認
 %\usepackage{layout}
-%\usepackage{pdfpages}
+\usepackage{pdfpages}
 \usepackage{ascmac}
 \usepackage{here}				%図を強制的に出力する
 \usepackage{amsmath}			%枠組み・数式用パッケージ

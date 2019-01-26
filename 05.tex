@@ -1,4 +1,4 @@
-\chapter{反射音方向分布}
+\chapter{反射音方向分布特性}
 
 \section{初期音の方向別エネルギ率}
 室内音響学における研究や設計では常に音場の物理的特性と聴感的印象との対応を考えなければならないことから、インパルス応答については直接音領域と初期反射音領域、後期反射音領域と時間軸上で分けて扱うのが一般的である。
@@ -8,17 +8,17 @@
 \begin{table}[htbp]
 \begin{equation}
   \label{eq:ERV}
-  ER_V = 10\log_{10}{\frac{\displaystyle\int_0^{80}p^2(t)cos^2{\delta}dt}{\displaystyle\int_0^{80}p^2(t)dt}} 
+  ER_V = {\frac{\displaystyle\int_0^{80}p^2(t)cos^2{\delta}dt}{\displaystyle\int_0^{80}p^2(t)dt}} 
 \end{equation}
 
 \begin{equation}
   \label{eq:ERL}
-  ER_L = 10\log_{10}{\frac{\displaystyle\int_0^{80}p^2(t)sin^2{\delta}cos^2{\theta}dt}{\displaystyle\int_0^{80}p^2(t)dt}} 
+  ER_L = {\frac{\displaystyle\int_0^{80}p^2(t)sin^2{\delta}cos^2{\theta}dt}{\displaystyle\int_0^{80}p^2(t)dt}} 
 \end{equation}
 
 \begin{equation}
   \label{eq:ERG}
-  ER_G = 10\log_{10}{\frac{\displaystyle\int_0^{80}p^2(t)sin^2{\delta}sin^2{\theta}dt}{\displaystyle\int_0^{80}p^2(t)dt}} 
+  ER_G = {\frac{\displaystyle\int_0^{80}p^2(t)sin^2{\delta}sin^2{\theta}dt}{\displaystyle\int_0^{80}p^2(t)dt}} 
 \end{equation}
 
 \centering
@@ -26,9 +26,9 @@
 \label{fig:}
 \end{table}
 
-\subsection{DUIの導入}
-ここで鉛直方向・側方・前後方向から反射音エネルギが均等に到来するとき、$ER_V$、$ER_L$、$ER_G$の3値は全て$\frac{1}{3}$となることから、反射音の到来方向に関する空間バランスを見るための指標として3次元直交座標系における点($ER_V$,$ER_L$,$ER_G$)と点($\frac{1}{3}$,$\frac{1}{3}$,$\frac{1}{3}$)の距離$d_i$を観測点ごとに求め(\textbf{式}\ref{eq:di})、その空間内全観測点の平均値として$DUI$(Directional Uniformity Index)$^{\text{\cite{後期音}}}$を算出する(\textbf{式}\ref{eq:DUI})。以後、反射音到来方向分布の一様度を見るため、$DUI$を用いた評価を行う。
-
+\section{$DUI$の導入}
+ここで鉛直方向・側方・前後方向から反射音エネルギが均等に到来するとき、$ER_V$、$ER_L$、$ER_G$の3値は全て$\frac{1}{3}$となることから、反射音の到来方向に関する空間バランスを見るための指標として3次元直交座標系における点($ER_V$,$ER_L$,$ER_G$)と点($\frac{1}{3}$,$\frac{1}{3}$,$\frac{1}{3}$)の距離$d_i$を観測点ごとに求め(\textbf{式}\ref{eq:di})、その空間内全観測点の平均値として$DUI$(Directional Uniformity Index)$^{\text{\cite{後期音}}}$を算出する(\textbf{式}\ref{eq:DUI})。以後、$DUI$を用いて反射音到来方向分布の一様度の評価を行う。
+\begin{table}[htbp]
 \begin{equation}
   \label{eq:di}
   d_i = \sqrt{\left({ER_V-\frac{1}{3}}\right)^2 + (\left(ER_L-\frac{1}{3}\right)^2 + \left(ER_G-\frac{1}{3}\right)^2} 
@@ -37,8 +37,45 @@
     \label{eq:DUI}
     DUI=\frac{\sum_{i=1}^N{d_i}}{N}
 \end{equation}
+\end{table}
+
+\section{観測点の座標系について}
+反射音方向分布特性をみるにあたり、観測点における座標系の置き方について2通りの検討を行った(\figref{observing})。\\
+(i)観測点の座標系を解析モデルの3次元直交座標系にあわせる(正面:y軸負の方向)\\
+(ii)観測点の座標系を音源中心の極座標系にする(正面:音源)\\
+(i),(ii)それぞれの場合の$ER_V$、$ER_L$、$ER_G$及び$d_i$の分布を観測高さ$H$[m]ごとに示す。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[keepaspectratio,scale=1]{05_att/observing.pdf}
+    \caption{\hspace{1mm}\textbf{Study of head direction}}
+    \label{fig:observing}
+\end{figure}
+
+\includepdf[pages=-]{05_att/cont_y.pdf}
+\includepdf[pages=-]{05_att/cont_s.pdf}
+
+\subsubsection{(i)正面:y軸負の方向の場合}
+天井付近では天井からの反射音が豊富に到来するが、座席部前方では前後方向成分が多くなり、座席後方では鉛直方向成分が多くなる。
+すなわち、観測高さ$H$が高い音場では座席部前方で$ER_V$が、座席部後方で$ER_G$が大きな値をとっている(\figref{er_reason})。
+一方、$ER_L$が音源付近で高い値をとっている。これは、頭の方向が常にy軸負の方向を向いているため、両耳方向に音源からの直接音が到来し、側方成分が多くなったと考えられる。
+\\
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[keepaspectratio,scale=1]{05_att/er_reason.pdf}
+    \caption{\hspace{1mm}\textbf{$ER_V$ vs $ER_G$}}
+    \label{fig:er_reason}
+\end{figure}
+
+\subsubsection{(ii)正面:音源方向の場合}
+常に頭が音源を向いているため、直接音は常に前後方向成分に含まれる。$ER_V$、$ER_L$、$ER_G$の和は常に1であるから、$ER_V$と$ER_L$に比べ$ER_G$が全体的に高い値をとっている。側壁付近で$ER_L$が高い値をとっているが、これは頭が音源を向いているため、両耳方向と側壁からの反射音の入射角が合うためであると考えられる。
+\\　本研究では実際にコンサートホールで音を聴いたときに受ける印象と反射音方向分布に符合する(ii)頭の向きを音源としたときの条件で解析を行う。
+\pagebreak
 
 \subsection{観測高さの違いと反射音方向分布特性の分析}
+
+
+
 
 \subsection{客席面吸音率の変化と反射音方向分布特性の分析}
 
