@@ -1,9 +1,13 @@
 \chapter{反射音方向分布特性}
 
-\section{初期音の方向別エネルギ率}
-室内音響学における研究や設計では常に音場の物理的特性と聴感的印象との対応を考えなければならないことから、インパルス応答については直接音領域と初期反射音領域、後期反射音領域と時間軸上で分けて扱うのが一般的である。
-\\　本研究もそれに倣い、観測点位置による影響が大きいであろう直接音と初期反射音域をとりあげ、考察を行った。
-反射音の到来方向分布特性を見るにあたり、初期反射音の全エネルギ($t$=0$\sim$80[ms])に対する鉛直方向成分の割合$ER_V$(vertical energy ratio)、側方成分の割合$ER_L$(lateral energy ratio)、前後方向成分の割合$ER_G$(longitudinal energy ratio)を各々算出した(\textbf{式}\ref{eq:ERV}$\sim$\ref{eq:ERG})。ここで$\delta$は仰角(鉛直上方向:0$^\circ$)、$\theta$は水平角(側方:0$^\circ$)を表す。
+\section{反射音の方向情報}
+反射音の方向情報をみるため、解析で得られたインパルス応答から鉛直方向成分、側方成分、前後方向成分に分解した。なお、反射音の到来角度は音源方向を$0^\circ$とした。
+初期反射音($t$=0$\sim$80[ms])の側方成分は観測高さによる違いは見られないものの、鉛直方向成分は座席面遠方音場($H$=14.0)において豊富に到来しているのに対し、座席面近傍音場($H$=1.2)では著しく不足している。
+
+\includepdf[pages=-, angle=90]{05_att/ir_rec3.pdf}
+
+\section{反射音方向別エネルギ比}
+ここで、反射音の到来方向バランスを定量的に把握するため、初期反射音の全エネルギ($t$=0$\sim$80[ms])に対する鉛直方向成分の割合$ER_V$(vertical energy ratio)、側方成分の割合$ER_L$(lateral energy ratio)、前後方向成分の割合$ER_G$(longitudinal energy ratio)を各々算出した(\textbf{式}\ref{eq:ERV}$\sim$\ref{eq:ERG})。ここで$\delta$は仰角(鉛直上方向:0$^\circ$)、$\theta$は水平角(側方:0$^\circ$)を表す。
 
 \begin{table}[htbp]
 \begin{equation}
@@ -26,12 +30,13 @@
 \label{fig:}
 \end{table}
 
+\pagebreak
 \section{$DUI$の導入}
 ここで鉛直方向・側方・前後方向から反射音エネルギが均等に到来するとき、$ER_V$、$ER_L$、$ER_G$の3値は全て$\frac{1}{3}$となることから、反射音の到来方向に関する空間バランスを見るための指標として3次元直交座標系における点($ER_V$,$ER_L$,$ER_G$)と点($\frac{1}{3}$,$\frac{1}{3}$,$\frac{1}{3}$)の距離$d_i$を観測点ごとに求め(\textbf{式}\ref{eq:di})、その空間内全観測点の平均値として$DUI$(Directional Uniformity Index)$^{\text{\cite{後期音}}}$を算出する(\textbf{式}\ref{eq:DUI})。以後、$DUI$を用いて反射音到来方向分布の一様度の評価を行う。
 \begin{table}[htbp]
 \begin{equation}
   \label{eq:di}
-  d_i = \sqrt{\left({ER_V-\frac{1}{3}}\right)^2 + (\left(ER_L-\frac{1}{3}\right)^2 + \left(ER_G-\frac{1}{3}\right)^2} 
+  d_i = \sqrt{\left({ER_V-\frac{1}{3}}\right)^2 + \left(ER_L-\frac{1}{3}\right)^2 + \left(ER_G-\frac{1}{3}\right)^2} 
 \end{equation}
 \begin{equation}
     \label{eq:DUI}
@@ -39,6 +44,7 @@
 \end{equation}
 \end{table}
 
+\pagebreak
 \section{観測点の座標系について}
 反射音方向分布特性をみるにあたり、観測点における座標系の置き方について2通りの検討を行った(\figref{observing})。\\
 (i)観測点の座標系を解析モデルの3次元直交座標系にあわせる(正面:y軸負の方向)\\
@@ -72,16 +78,11 @@
 \\　本研究では実際にコンサートホールで音を聴いたときに受ける印象と反射音方向分布に符合する(ii)頭の向きを音源としたときの条件で解析を行う。
 \pagebreak
 
-\subsection{観測高さの違いと反射音方向分布特性の分析}
+\section{観測高さの違いと反射音方向分布特性の分析}
 
 
+\section{客席面吸音率の変化と反射音方向分布特性の分析}
 
-
-\subsection{客席面吸音率の変化と反射音方向分布特性の分析}
-
-
-\section{距離減衰特性}
-\subsection{初期音に関する物理量}
 
 このとき、$t_A$を最初の反射音が到達するまでの時間、$p_A(t)$を音源からの距離が10mの観測点における直接音の音圧とする。
 
@@ -104,10 +105,4 @@
   \label{eq:}
   GG_{early} = 10\log_{10}{\frac{\displaystyle\int_0^{80}p^2(t)sin^2{\delta}sin^2{\theta}dt}{\displaystyle\int_0^{t_A}p_{A}^2(t)dt}} \dB
 \end{equation}
-
-\subsection{減衰率の算出}
-回帰直線の傾きから減衰率[dB/dd]を算出する旨。
-\subsection{観測高さの違いと距離減衰特性の分析}
-\subsection{客席面吸音率の変化と距離減衰特性の分析}
-客席面を吸音性/反射性にしたときに距離減衰特性がどのように変化したかを記述。
 

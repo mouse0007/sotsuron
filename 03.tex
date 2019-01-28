@@ -1,7 +1,11 @@
-\chapter{評価手法}
+\chapter{分析手法}
+
 \section{一元配置分散分析}
 観測高さ間における室内音響物理指標や音響物理量の違いをみるため、一元配置分散分析を用いる。これは、要因が異なる複数の標本の母平均が等しい(複数の標本から求められた平均値が、同じ母平均を持つ母集団から抽出された)という仮説を検定することにより、要因の違いにより複数の標本の母平均に違いがあるか(要因の違いに意味があるか)を検討するものである$^{\text{\cite{kanno}{\cite{池田1}{\cite{池田2}{\cite{池田3}}}}}}$。
-\\　観測点(x,y,$H_z$)における室内音響物理指標・音響物理量が観測高さ$H$により受ける影響を調べるため一元分散分析(対応あり)を用いて分析を行う。分析によって有意差が確認できた指標についてはBonferroniの多重比較を行う。
+\\　観測点(x,y,$H_z$)における室内音響物理指標・音響物理量が観測高さ$H$により受ける影響を調べるため一元分散分析(対応あり)を用いて分析を行う。分析によって有意差が確認できた指標についてはHolm法による多重比較を行う。
+
+\section{標準偏差}
+音響エネルギ分布の一様性を評価するために平均値と標準偏差を用いた評価を行う。
 
 \section{室内音響物理指標の弁別限}
 水準間に有意な差があったとき、その差は人間が知覚できるほどの変化量であるかどうかをJND ( just noticeable difference : 感覚上ちょうど感知できる物理刺激の最小変化量 ) を用いて判断する。
@@ -41,14 +45,16 @@ Apparent source width (ASW) & $LF${[}\%{]} & 500 to 1000 & 5{[}\%{]} \\
         l=\frac{31200T}{V}e^{\frac{-0.04r}{T}}e^{\frac{-1.11}{T}}
     \end{equation}
 \end{table}
-\\　$d$、$e_r$、$l$を用いて室内音響物理指標$G$や$C_{80}$との理論値が算出可能となる。以後、音場の評価を行う際はBarron's revised theoryによる理論値との比較検討を行う。
+\\　$d$、$e_r$、$l$を用いて室内音響物理指標$G$や$C_{80}$、及び$G_{early}$,$G_{late}$の理論値が算出可能となる。以後、音場の評価を行う際はBarron's revised theoryによる理論値との比較検討を行う。
 \begin{table}[htbp]
     \begin{equation}
         G=10\log_{10}(d+e_r+l)\hspace{2mm}\dB
     \end{equation}
     \begin{equation}
+        G_{early}=10\log_{10}(d+e)\hspace{2mm}\dB
+    \end{equation}
+    \begin{equation}
         G_{late}=10\log_{10}(l)\hspace{2mm}\dB
-\\
     \end{equation}
     \begin{equation}
         C_{80}=10\log_{10}\frac{d+e_r}{l}\hspace{2mm}\dB
