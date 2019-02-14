@@ -131,6 +131,7 @@ m_b = \mathrm{from \; ISO \; 9613.1^{\text{\cite{organizacion1993iso}}} \; based
     \label{fig:(A)矩形モデル及び(B)扇形モデル平面図}
 \end{figure}
 
+\clearpage
 \subsection{吸音率の設定}
 室の内装面は客席床と後壁を吸音性、その他の面を反射性とし、両ホールの残響時間が等しくなるように現実的な吸音率(250$\sim$2kHz)$^{\text{\cite{01-3}\cite{02-1}\cite{02-2}}}$を設定した。客席床の吸音率については国内の標準的な1席(人+モケット張り椅子)の吸音力$^{\text{\cite{02-4}}}$を1席あたりの床面積(=0.6m$^2$)で除した値(\tabref{客席面の吸音率})を用いた。解析モデルに用いた吸音率を\tabref{解析モデルの吸音率}に示す。
 \\
@@ -172,7 +173,7 @@ Wall \_ stage            & Acoustic reflector                        & 0.15 & 0.
 }
 \end{table}
 %%%%%%%%%%%%%%%%%%%
-\pagebreak
+\clearpage
 \subsection{乱反射率の設定}
 乱反射率(Scattering coefficient)はISO17497-1$^{\text{\cite{iso2004acoustics}}}$の中で壁面の全反射エネルギーに対する鏡面反射成分以外のエネルギーの割合として定義され、\textbf{式}\ref{eq:scatter}で表される。ここで$E_{total}$は全反射エネルギー、$E_{spec}$は鏡面反射エネルギーである。
 
@@ -252,3 +253,19 @@ Wall \_ stage            & Reflective               & *                         
 \end{tabular}
 \end{table}
 %%%%%%%%%%%%%%%%%%%
+
+\clearpage
+\section{解析結果}
+解析で得られたインパルス応答から各種音響物理指標(音圧レベル特性Strength $G$、時間エネルギ特性 Deutlichkeit $D_{50}$、及び初期/後期反射音エネルギ比$C_{80}$、残響エネルギ特性 初期残響時間$EDT$、方向特性 初期側方反射エネルギ率$LF$、及び両耳間相互相関度$IACC$)を観測高さごとに算出した。
+\\　(A)矩形モデルにおける各種音響物理指標の平面コンター図、度数分布表、各指標値と音源-観測点間距離$r$[m]の関係を次項より示す。
+なお、音源はコンター図内(x, y, z)=(0.0, 8.0, 2.5)に位置し、ステージ先端はy=10.0にあたる(\figref{zahyo})。
+また、度数分布表内の破線は各観測高さ内にある105の観測点の平均値$\mu$を表す。
+
+\begin{figure}[htbp]
+    \centering
+    \includegraphics[keepaspectratio,scale=1]{04_att/zahyo.pdf}
+    \caption{\hspace{1mm}Rectangular coordinate system of model}
+    \label{fig:zahyo}
+\end{figure}
+
+\input{992_onkyoshihyo}
